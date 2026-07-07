@@ -9,10 +9,10 @@ jobs:
 
     steps:
     - name: Cek kode sumber
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4 # Diperbarui ke v4 (Mendukung Node 24)
 
     - name: Siapkan Python Resmi Windows
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5 # Diperbarui ke v5 (Mendukung Node 24)
       with:
         python-version: '3.10'
 
@@ -26,7 +26,7 @@ jobs:
         pyinstaller --onefile app_outlet.py
 
     - name: Amankan Hasil File EXE
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v4 # Tetap v4 (Sudah versi terbaru & aman)
       with:
         name: Aplikasi_Outlet_Windows
         path: dist/app_outlet.exe
